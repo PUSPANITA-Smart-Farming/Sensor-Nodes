@@ -72,7 +72,7 @@ void setup() {
   //DHT11
   dht.begin();
   //Soil Moisture
-  //.....
+  pinMode(SoilMoisturePin, INPUT);
   //LDR
   pinMode(LDR, INPUT);
 }
