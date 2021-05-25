@@ -1,7 +1,7 @@
 /*
 GIPE 2021 Smart Farming IoT Code
 ==================================
-Last Updated 24 May 2021
+Last Updated 25 May 2021
 
 Parts :
 - ESP 32
@@ -24,8 +24,7 @@ IMPORTANT IF YOU USE ESP 32:
 Made by:
 GIPE 2021 Scholars
 
-Tested on DOIT ESP 32 DEV Kit V1 board 24 May 2021
-Note : Failed to connect to thingsboard server
+Tested on DOIT ESP 32 DEV Kit V1 board 25 May 2021
 */
 
 #include "ThingsBoard.h"
@@ -73,7 +72,7 @@ void setup() {
   //DHT11
   dht.begin();
   //Soil Moisture
-  //.....
+  pinMode(SoilMoisturePin, INPUT);
   //LDR
   pinMode(LDR, INPUT);
 }
