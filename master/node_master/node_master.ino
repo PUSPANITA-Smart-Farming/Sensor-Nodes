@@ -31,11 +31,12 @@ Note : Failed to connect to thingsboard server
 #include "ThingsBoard.h"
 #include <WiFi.h>           //Setup for ESP32 change to <ESP8266WiFi.h> if you want to use ESP8266(WARNING ESP 8266 has only 1 Analog input!)
 //setup ISP
-#define WIFI_AP             "SSID"     //PUSPITA AP
-#define WIFI_PASSWORD       "Password" //Password
+#define WIFI_AP             "SSID"            //PUSPITA AP
+#define WIFI_PASSWORD       "Password"        //Password
 //setup token
-#define TOKEN               "tr33crxcEKPGpPpAMAz8"  // node 1
-#define THINGSBOARD_SERVER  "http://[2400:6180:0:d0::10cb:8001]:8080/" //our thingsboardserver or use http://178.128.112.223:8080/
+#define DESIRED_TOKEN       "node1"           // change this according to desired node (TOKEN)
+#define TOKEN               DESIRED_TOKEN           
+#define THINGSBOARD_SERVER  "178.128.112.223" //our thingsboard server
 // Baud rate for debug serial
 #define SERIAL_DEBUG_BAUD   115200
 
@@ -72,7 +73,7 @@ void setup() {
   //DHT11
   dht.begin();
   //Soil Moisture
-  pinMode(SoilMoisturePin, INPUT);
+  //.....
   //LDR
   pinMode(LDR, INPUT);
 }
@@ -96,7 +97,8 @@ void loop() {
     }
   }
 
-  Serial.println("Sending data...");
+  Serial.print("Sending data to: ");
+  Serial.println(DESIRED_TOKEN);
   
   dht_readsend();
   delay(100);
