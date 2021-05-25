@@ -3,8 +3,8 @@
 
 #include <WiFi.h>           //Setup for ESP32 change to <ESP8266WiFi.h> if you want to use ESP8266(WARNING ESP 8266 has only 1 Analog input!)
 //setup ISP
-#define WIFI_AP             "Internet"            //PUSPITA AP
-#define WIFI_PASSWORD       "Passwort"        //Password
+#define WIFI_AP             "SSID"            //PUSPITA AP
+#define WIFI_PASSWORD       "Password"        //Password
 //setup token
 #define DESIRED_TOKEN       "node1"           // change this according to desired node (TOKEN)
 #define TOKEN               DESIRED_TOKEN           
